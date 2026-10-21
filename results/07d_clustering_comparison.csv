@@ -1,0 +1,5 @@
+Algorithm,Clusters,Silhouette,Davies-Bouldin
+KMeans,6,0.126,2.2332
+DBSCAN,26,0.2574,N/A
+Agglomerative,6,0.1067,2.3465
+GMM,6,0.0833,2.8258

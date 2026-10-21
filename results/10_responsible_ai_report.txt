@@ -1,0 +1,49 @@
+
+RESPONSIBLE AI PRACTICES – SHEFFIELD ROAD COLLISION PIPELINE
+=============================================================
+
+1. FAIRNESS & BIAS MITIGATION
+   - Class imbalance (Fatal=3%, Slight=77%) addressed via random
+     oversampling so the model does not predict 'Slight' for every
+     collision (majority-class bias).
+   - Weighted F1 used as primary metric – penalises models that
+     ignore minority classes (Fatal/Serious).
+   - Urban/rural geographic split examined separately in Section 5B.
+
+2. TRANSPARENCY & EXPLAINABILITY
+   - Feature importance plots (Section 9A) show which factors drive
+     severity predictions – speed_limit, hour, number_of_casualties
+     consistently rank highly.
+   - Confusion matrices provided for all classifiers showing exact
+     misclassification patterns.
+   - All hyperparameter choices logged with best params printed.
+
+3. ACCOUNTABILITY & DOCUMENTATION
+   - Train/Validation/Test split ensures test evaluation uses data
+     the model has never seen during training or tuning.
+   - 5-fold stratified cross-validation confirms generalisation.
+   - Every modelling decision commented inline in source code.
+   - AI use declared at AITS-2; all prompts logged in ai_prompts_log.txt.
+
+4. DATA PRIVACY & SECURITY
+   - No personally identifiable information (PII) present in dataset.
+   - collision_index and collision_ref_no excluded from all features.
+   - Dataset from official UK DfT open data (OGL v3.0 licence).
+
+5. RELIABILITY & SAFETY
+   - Outlier capping applied (IQR) to prevent model sensitivity to
+     extreme or erroneous values.
+   - Predictions should SUPPORT (not replace) decisions by road
+     safety professionals at South Yorkshire Police / Sheffield CC.
+   - Model limitations:
+       * Historical data (1979-2024): future conditions may differ.
+       * Sheffield only: cannot generalise to other cities.
+       * STATS19 is police-reported: under-reporting of minor
+         incidents likely, introducing selection bias.
+
+6. INCLUSIVITY & SUSTAINABILITY
+   - Collision hotspot maps (Section 9C) identify areas that
+     disproportionately affect vulnerable road users (pedestrians,
+     cyclists, elderly).
+   - Insights support UK Road Safety Strategy targets: reduce killed
+     and seriously injured (KSI) by 50% by 2040.
