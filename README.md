@@ -33,4 +33,3 @@ It runs immediately on synthetic data (`USE_REAL_DATA=False`). To use the real f
 
 ## Note on AI use
 
-`ai_prompts_log.txt` is the transparency log the module required — a record of where AI assistance was used while building this.

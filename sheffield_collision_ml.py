@@ -1134,7 +1134,6 @@ RESPONSIBLE AI PRACTICES – SHEFFIELD ROAD COLLISION PIPELINE
      the model has never seen during training or tuning.
    - 5-fold stratified cross-validation confirms generalisation.
    - Every modelling decision commented inline in source code.
-   - AI use declared at AITS-2; all prompts logged in ai_prompts_log.txt.
 
 4. DATA PRIVACY & SECURITY
    - No personally identifiable information (PII) present in dataset.
