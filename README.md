@@ -16,7 +16,25 @@ The pipeline (`sheffield_collision_ml.py`) runs the whole thing in order:
 6. **Clustering** — KMeans, DBSCAN and hierarchical, with elbow + silhouette to choose *k* and PCA for 2-D visualisation
 7. **Model comparison** — side-by-side metrics, learning curves and feature importance
 
-All 27 output charts and result tables are in [`results/`](results/).
+All output charts and result tables are in [`results/`](results/).
+
+## Results
+
+The charts below come straight from `results/`, produced by running the pipeline on its built-in synthetic dataset, which mirrors the real STATS19 columns and value ranges. Set `USE_REAL_DATA=True` to regenerate every chart from the real Sheffield records.
+
+![Analysis dashboard](results/09d_dashboard.png)
+
+**Exploratory analysis:** severity split, collisions per year, month and hour, road surface, and missing values before cleaning.
+
+![EDA overview](results/01_eda_overview.png)
+
+**Model comparison:** nine classifiers on collision severity (left) and six on urban vs rural (right).
+
+![Model comparison](results/08a_classification_comparison.png)
+
+| What drives severity predictions | Clusters found by KMeans (PCA view) |
+|---|---|
+| ![Feature importance](results/09a_feature_importance.png) | ![KMeans clusters](results/07b_pca2d_clusters.png) |
 
 ## Tech
 
@@ -30,6 +48,3 @@ python sheffield_collision_ml.py
 ```
 
 It runs immediately on synthetic data (`USE_REAL_DATA=False`). To use the real figures, download the dataset from the [UK road-safety open data](https://www.gov.uk/government/statistical-data-sets/road-safety-open-data), drop the CSV in `data/`, and set `USE_REAL_DATA=True`.
-
-## Note on AI use
-
